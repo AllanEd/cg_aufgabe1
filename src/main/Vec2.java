@@ -30,36 +30,39 @@ public class Vec2 {
     // Implementieren Sie die folgenden Methoden
 
     public Vec2 add(Vec2 other) {
-        return null; // TODO: implementieren Sie die Vektoraddition - geben Sie ein neues Vektorobjekt zurück!
+        return new Vec2(this.x + other.x, this.y + other.y); // TODO: implementieren Sie die Vektoraddition - geben Sie ein neues Vektorobjekt zurück!
     }
 
     public Vec2 sub(Vec2 other) {
-        return null; // TODO: Subtraktion - Tipp: Vielleicht können Sie diese Operation mit Hilfe von add und mult ausdrücken?
+        return this.add(other.mult(-1)); // TODO: Subtraktion - Tipp: Vielleicht können Sie diese Operation mit Hilfe von add und mult ausdrücken?
     }
 
     public Vec2 mult(float d) {
-        return null; // TODO Multiplikation mit einer Zahl / Skalierung
+        return new Vec2(this.x * d, this.y * d); // TODO Multiplikation mit einer Zahl / Skalierung
     }
 
     public Vec2 div(float d) {
-        return null; // TODO Division: Tipp - kann durch Multiplikation ausgedrückt werden
+        return this.mult(1 / d); // TODO Division: Tipp - kann durch Multiplikation ausgedrückt werden
     }
 
     public Vec2 neg() {
-        return null; // TODO Negation (ein Vektor der gleichen Länge, der in die umgekehrte Richtung weist.)
+        return new Vec2(this.x * -1, this.y * -1); // TODO Negation (ein Vektor der gleichen Länge, der in die umgekehrte Richtung weist.)
     }
 
     public float length() {
-        return 0; // TODO Länge berechnen. Nutzen Sie Math.sqrt, aber Vorsicht, unsere Vektoren rechnen mit float
+        double powX = Math.pow(this.x, 2);
+        double powY = Math.pow(this.y, 2);
+        return (float)Math.sqrt(powX + powY); // TODO Länge berechnen. Nutzen Sie Math.sqrt, aber Vorsicht, unsere Vektoren rechnen mit float
     }
 
     public Vec2 unit() {
-        return null; // TODO: Normieren eines Vektors (so umrechnen, dass der Vektor die Länge 1 hat, aber die Richtung nicht ändert)
+        float l = this.length();
+        return new Vec2(this.x / l, this.y / l); // TODO: Normieren eines Vektors (so umrechnen, dass der Vektor die Länge 1 hat, aber die Richtung nicht ändert)
     }
 
     // Skalarprodukt
     public float skalarProd(Vec2 other) {
-        return 0; // TODO Berechnen Sie das Skalarprodukt
+        return this.x * other.x + this.y * other.y; // TODO Berechnen Sie das Skalarprodukt
     }
 
 

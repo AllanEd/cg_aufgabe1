@@ -46,22 +46,32 @@ public class Matrix2 {
 
     // Hilfsmethode : Erzeugt eine Rotationsmatrix, siehe Skript
     public static Matrix2 rotate(float alpha) {
-        return null; // TODO: Hier soll eine Rotationsmatrix für den Winkel alpha erzeugt werden - verwenden Sie sin und cos (Bodenmaß!)
+        return Matrix2.of(
+                cos(alpha), -sin(alpha),
+                sin(alpha), cos(alpha)
+        ); // TODO: Hier soll eine Rotationsmatrix für den Winkel alpha erzeugt werden - verwenden Sie sin und cos (Bodenmaß!)
     }
 
     // Skalierung
     public static Matrix2 scale(float sx, float sy) {
-        return null; // TODO: Hier soll eine Skalierungsmatrix erzeugt werden
+        return Matrix2.of(
+                1 * sx, 0,
+                0, 1 * sy
+        ); // TODO: Hier soll eine Skalierungsmatrix erzeugt werden
     }
 
     // Matrix x Matrix
     public Matrix2 mult(Matrix2 m) {
-        return null; // TODO: Implementieren Sie die Matrix-Matrix-Multiplikation
+        return new Matrix2(
+                this.a11 * m.a11 + this.a12 * m.a21, this.a11 * m.a12 + this.a12 * m.a22,
+                this.a21 * m.a11 + this.a22 * m.a21, this.a21 * m.a12 + this.a22 * m.a22); // TODO: Implementieren Sie die Matrix-Matrix-Multiplikation
     }
 
     // Matrix x Vector
     public Vec2 mult(Vec2 v) {
-        return null; // TODO: Implementieren Sie die Matrix-Vektor-Multiplikation
+        return Vec2.of(
+                this.a11 * v.x + this.a12 * v.y,
+                this.a21 * v.x + this.a22 * v.y); // TODO: Implementieren Sie die Matrix-Vektor-Multiplikation
     }
 
     // Vergleich zweier Matrizen

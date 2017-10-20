@@ -41,7 +41,8 @@ public class ExampleWithMatrix extends PApplet {
 
         // Kirche einmal im Original und einmal mit der Matrix abgebildet zeichnen
         church(Matrix2.unit());
-        church(matrix);
+        church(matrix.scale(2, 1));
+        church(matrix.rotate(45));
 
         // die Spaltern der MAtrix als Vektor
         line(SCREEN_X/2, SCREEN_Y/2, SCREEN_X/2+ex.x, SCREEN_Y/2+ex.y);

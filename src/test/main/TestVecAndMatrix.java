@@ -45,8 +45,9 @@ public class TestVecAndMatrix {
                 EPSILON);
     }
 
-    @Test
+   @Test
     public void testUnit() {
+        System.out.println(Vec2.of(2,3).unit().length());
         assertEquals(
                 Vec2.of(2,3).unit().length(),
                 1.0,
